@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+<h1>订单列表</h1>
+<br/>
+<div class="mini-fit">
+	  <div id="layout1" class="mini-layout" style="width:100%;height:100%;">
+	  	  <div title="" region="west" width="200" showHeader="false" showSplitIcon="true" class="left-menu-layout">
+          	  <div title="筛选">
+                        <table id="selectTable" class="selectTable">
+                          <tr>
+                              <td class="tbname">登记时间：</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <input id="oneTimeBegin" name="oneTimeBegin" class="mini-datepicker" emptyText="" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"/>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>至</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <input id="oneTimeEnd" name="oneTimeEnd" class="mini-datepicker" emptyText="" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"/>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td class="tbname">付款时间：</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <input id="twoTimeBegin" name="twoTimeBegin" class="mini-datepicker" emptyText="" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"/>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>至</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <input id="twoTimeEnd" name="twoTimeEnd" class="mini-datepicker" emptyText="" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"/>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td class="tbname">订单类型:</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <input id="findTradeType"  name="findTradeType" class="mini-combobox" textField="name" valueField="id" emptyText="请选择..." multiSelect="true"
+                                      />
+                              </td>
+                          </tr>
+                            <tr>
+                                <td class="tbname">店铺：</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="findShop" name="findShop" class="mini-combobox" textField="shopName" valueField="shopId" emptyText="请选择..." multiSelect="true"
+                                         />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tbname">发货仓库：</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="findWarehouse" name="findWarehouse" class="mini-combobox" textField="warehouseName" valueField="warehouseId" emptyText="请选择..." multiSelect="true"
+                                          />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tbname">物流方式:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="findLogistic" name="findLogistic" class="mini-combobox" textField="logisticName" valueField="id" emptyText="请选择..." multiSelect="true"
+                                        />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tbname">订单状态:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="findTradeStatus" name="findTradeStatus" class="mini-combobox" textField="text" valueField="value" emptyText="请选择..." multiSelect="true"/>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td>
+                            		<a id="searchByConditionBtn" class="mini-button"  iconCls="icon-find" width="200px">查询</a>
+                            	</td>
+                            </tr>
+                     </table>
+         	 </div>
+		  </div>
+		  
+		  <div title="center" region="center">
+		  	<div>
+		  		<span id="conditionField" class="mini-combobox"  emptyText="请选择条件..." width="200px" url="/oms/json/condition.json"></span>
+		  		<span id="inputText" class="mini-textbox" width="250px"></span>
+		  		<a id="searchByLike" class="mini-button" iconCls="icon-find">模糊查询</a>
+		  	</div>
+	  		<div class="mini-datagrid" id="ordersGrid" style="width:100%;height:100%;"  idField="id"
+		        allowResize="true" pageSize="20"
+		        allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+		        editNextOnEnterKey="true"  editNextRowCell="true">
+        <div property="columns">
+        	<div type="indexcolumn">序列号</div>
+        	<div name="id" field="id" headerAlign="center" width="" align="center">流水ID
+        	</div>
+        	<div name="tradeId" field="tradeId" headerAlign="center" width="" align="center">订单号
+        	</div>
+        	<div name="shopName" field="shopName" headerAlign="center" width="" align="center">店铺名称
+        	</div>
+        	<div name="seller" field="seller" headerAlign="center" width="" align="center">业务员
+        	</div>
+        	<div name="tradeType" field="tradeType" headerAlign="center" width="" align="center">订单类型
+        	   
+        	</div>
+      	   <div name="gmtCreate" field="gmtCreate" headerAlign="center" width="" align="center" dateFormat="yyyy-MM-dd HH:mm:ss">建单时间
+        	</div>
+        	<div name="tradeStatus" field="tradeStatus" headerAlign="center" width="" align="center"  renderer='onGridOneRowRender'>订单状态
+        	</div>
+        	<div name="totalMoney" field="totalMoney" headerAlign="center" width="" align="center">总价格
+        	</div>
+        </div>
+	  </div>
+	 </div>
+	</div>
+
+</div>
+
+  <script src="/oms/js/order_list.js"></script>
+</body>
+</html>

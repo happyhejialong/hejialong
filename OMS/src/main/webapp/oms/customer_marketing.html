@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+    <h1>客户营销</h1>
+    <br/>
+    <div>
+        <a class="mini-button" width="100px" iconCls="icon-add" id="addBtn">添加客户</a>
+    </div>
+    <div class="mini-datagrid" id="customersGrid" style="width:100%;height:45%;"  idField="id"
+            allowResize="true" pageSize="20"
+              allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+              editNextOnEnterKey="true"  editNextRowCell="true"">
+            <div property="columns">
+              <div type="checkcolumn">序列号</div>
+            	<div type="indexcolumn">序列号</div>
+            	<div name="customerNick" field="customerNick" headerAlign="center" width="" align="center">网名
+            	</div>
+            	<div name="customerName" field="customerName" headerAlign="center" width="" align="center">姓名
+            	</div>
+            	<div name="phone" field="phone" headerAlign="center" width="" align="center">手机
+            	</div>
+            	<div name="zip" field="zip" headerAlign="center" width="" align="center">邮编
+            	</div>
+            	<div name="email" field="email" headerAlign="center" width="" align="center">邮箱
+            	</div>
+          	   <div name="qq" field="qq" headerAlign="center" width="" align="center">qq
+            	</div>
+            	<div name="gender" field="gender" headerAlign="center" width="" align="center">性别
+            	</div>
+            	<div name="birthday" field="birthday" headerAlign="center" width="" align="center">生日
+            	</div>
+              <div name="age" field="age" headerAlign="center" width="" align="center">年龄
+            	</div>
+            </div>
+    	</div>
+      <hr/>
+      <div>
+        <a class="mini-button" width="100px" iconCls="icon-remove" id="delBtn">删除客户</a>
+      </div>
+      <div class="mini-datagrid" id="customersGrid1" style="width:100%;height:30%;"  idField="id"
+              allowResize="true" pageSize="20"
+              allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+              editNextOnEnterKey="true"  editNextRowCell="true">
+              <div property="columns">
+                <div type="checkcolumn"></div>
+                <div type="indexcolumn">序列号</div>
+                <div name="customerNick" field="customerNick" headerAlign="center" width="" align="center">网名
+                </div>
+                <div name="customerName" field="customerName" headerAlign="center" width="" align="center">姓名
+                </div>
+                <div name="phone" field="phone" headerAlign="center" width="" align="center">手机
+                </div>
+                <div name="zip" field="zip" headerAlign="center" width="" align="center">邮编
+                </div>
+                <div name="email" field="email" headerAlign="center" width="" align="center">邮箱
+                </div>
+                 <div name="qq" field="qq" headerAlign="center" width="" align="center">qq
+                </div>
+                <div name="gender" field="gender" headerAlign="center" width="" align="center">性别
+                </div>
+                <div name="birthday" field="birthday" headerAlign="center" width="" align="center">生日
+                </div>
+                <div name="age" field="age" headerAlign="center" width="" align="center">年龄
+                </div>
+              </div>
+        </div>
+        <hr/>
+        <div>
+          主题:<span class="mini-textbox" name="subject" id="subject"></span>
+          文本内容:<span class="mini-textbox" name="messgae" id="message" width="500px"></span>
+          <a class="mini-button" id="sendBtn" width="100px">发送</a>
+        </div>
+    <script src="/oms/js/customer_marketing.js"></script>
+</body>
+</html>

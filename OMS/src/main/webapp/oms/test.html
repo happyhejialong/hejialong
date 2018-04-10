@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+      <div id="orderInfo" class="inputBody">
+          <div class="inputTitle">新建订单</div>
+          <div id="base_info">
+            <div class="subhead fix">
+                <span class="level-blue"></span>
+                <span class="subhead-title">基本信息</span>
+            </div>
+              <div class="inputPanel">
+                <div class="mini-col-12">
+                   <div class="mini-col-6">
+                     <div class="fieldTitle">销售渠道</div>
+                     <div class="mini-combobox" name="tradeOrder.shopId" id="shop" textField="shopName" valueField="shopId" required="true" requiredErrorText="销售渠道不能为空"></div>
+                   </div>
+                   <div class="mini-col-6">
+                     <div class="fieldTitle">订单类型</div>
+                     <div id="tradeType" class="mini-combobox" name="tradeOrder.tradeType"  required="true" textField="name" valueField="id" requiredErrorText="订单类型不能为空"></div>
+                   </div>
+
+               </div>
+               <div class="mini-col-12">
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">原始单号</div>
+                    <div class="mini-textbox" name="tradeOrder.sourceTradeId" id="sourceTradeId" textField="sourceTradeId" valueField="sourceTradeNo"></div>
+                  </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">业务员</div>
+                    <div class="mini-combobox" name="tradeOrder.seller" id="seller" textField="name" valueField="id"></div>
+                  </div>
+              </div>
+               <div class="mini-col-12">
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">成交时间</div>
+                    <div class="mini-datepicker" name="tradeOrder.payTime" id="payTime" textField="payTime" valueField="payTime"  required="true" requiredErrorText="付款时间不能为空" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"></div>
+                  </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">登记时间</div>
+                    <div class="mini-datepicker" name="tradeOrder.payTime" id="payTime" textField="payTime" valueField="payTime"  required="true" requiredErrorText="付款时间不能为空" value="new Date()" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"></div>
+                  </div>
+              </div>
+
+
+
+             <div class="mini-col-12">
+                <div class="mini-col-6" >
+                  <div class="fieldTitle">客户备注</div>
+                  <div class="mini-textbox" id="buyerMemo" name="tradeOrder.buyerMemo" textField="buyerMemo" valueField="buyerMemo"></div>
+                </div>
+                <div class="mini-col-6">
+                  <div class="fieldTitle">客服备注</div>
+                  <div class="mini-textbox" id="sellerMemo" name="tradeOrder.sellerMemo"  textField="sellerMemo" valueField="sellerMemo"></div>
+                </div>
+            </div>
+              </div>
+          </div>
+
+          <div id="customer_info">
+              <div class="subhead fix">
+                  <span class="level-blue"></span>
+                  <span class="subhead-title">客户信息</span>
+              </div>
+
+              <div class="inputPanel">
+                <div class="mini-col-12">
+                   <div class="mini-col-6">
+                     <div class="fieldTitle">网名</div>
+                     <div class="mini-buttonedit" name="crmCustomer.customerNick" id="customerNick" required="true" requiredErrorText="网名不能为空"></div>
+                   </div>
+                   <div class="mini-col-6">
+                     <div class="fieldTitle">姓名</div>
+                     <div class="mini-textbox" name="crmCustomer.customerName" id="customerName"  required="true" textField="customerName" valueField="customerName" requiredErrorText="姓名不能为空"></div>
+                   </div>
+                   <input class="mini-hidden" name="crmCustomer.customerId"  id="customerId"/>
+                   <input class="mini-hidden" name="crmCustomer.id"  id="crmCustomer.id"/>
+               </div>
+               <div class="mini-col-12">
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">联系电话</div>
+                    <div class="mini-textbox" name="crmCustomer.phone" id="phone"  required="true" textField="phone" valueField="phone" requiredErrorText="联系电话不能为空"></div>
+                  </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">积分</div>
+                    <div class="mini-textbox" name="" id=""></div>
+                  </div>
+              </div>
+            <div class="mini-col-12">
+                <div class="mini-col-6">
+                  <div class="fieldTitle">类别</div>
+                  <div class="mini-combobox" name="crmCustomer.customerType" id="customerType" valueField="id" textField="name" url='/oms/data/customer_type.json'></div>
+                </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">会员等级</div>
+                    <div class="mini-combobox" name="crmCustomer.customerGrade" id="customerGrade" textField="name" valueField="id" url='/oms/data/customer_level.json' ></div>
+                  </div>
+
+            </div>
+            <div  class="mini-col-12">
+              <div class="mini-col-6">
+                <div class="fieldTitle">执行价格</div>
+                <div class="mini-combobox" name="crmCustomer.exercisePrice" id="exercisePrice" textField='name' valueField="id"></div>
+              </div>
+              <div class="mini-col-6">
+                <div class="fieldTitle">往来余额</div>
+                <div class="mini-textbox" name="" id="balance"></div>
+              </div>
+            </div>
+
+            <div  class="mini-col-12">
+              <div class="mini-col-6">
+                <div class="fieldTitle">折扣</div>
+                <div class="mini-textbox" name="tradeOrderCustomer.customerDiscount" id="tradeOrderCustomer.customerDiscount" textField="customerDiscount" valueField="customerDiscount" vtype="range:0,1"  required="true" requiredErrorText="折扣必须在0到1之间" value='1'></div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+
+            <div id="receiver_info">
+              <div class="subhead fix">
+                  <span class="level-blue"></span>
+                  <span class="subhead-title">收货人信息</span>
+              </div>
+              <div class="inputPanel">
+                <div  class="mini-col-12">
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">姓名</div>
+                    <div class="mini-combobox" name="tradeOrderReceiver.receiverName" allowInput="true" id="receiverName"  required="true"  textField="customerName" valueField="otherInfo" requiredErrorText="姓名不能为空"></div>
+                  </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">邮编</div>
+                    <div class="mini-textbox" name="tradeOrderReceiver.zip" id="zip" textField="zip" valueField="zip"></div>
+                  </div>
+                </div>
+                <div  class="mini-col-12">
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">联系电话</div>
+                    <div class="mini-textbox" name="tradeOrderReceiver.phone"  id="receiverPhone" required="true" textField="phone" valueField="phone" requiredErrorText="联系电话不能为空"></div>
+                  </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">手机</div>
+                    <div class="mini-textbox" name="tradeOrderReceiver.mobile" id="receiverMobile"  required="true" textField="mobile" valueField="mobile" requiredErrorText="手机号不能为空"></div>
+                  </div>
+                </div>
+                <div  class="mini-col-12">
+                  <div class="mini-col-12">
+                    <div class="fieldTitle">地址</div>
+                    <input class="mini-combobox"  allowInput="true" name="tradeOrderReceiver.country" id="country1" width="120" textField="name" valueField="name"/>
+                    <input class="mini-combobox" name="tradeOrderReceiver.state" id="state1" width="120px" allowInput="true" textField="name" valueField="name"  required="true" requiredErrorText="省不能为空"/>
+                    <input class="mini-combobox" name="tradeOrderReceiver.city" id="city1" width="120px"  allowInput="true" required="true" valueField="name" textField="name" requiredErrorText="市不能为空"/>
+                    <input class="mini-combobox" name="tradeOrderReceiver.district" id="district1" allowInput="true" width="120px" valueField="name" textField="name"/>
+                    <input class="mini-textbox" name="tradeOrderReceiver.address" id="address1" allowInput="true" width="290px" valueField="address" textField="address"/>
+                  </div>
+                </div>
+
+
+
+                <div  class="mini-col-12">
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">证件类型</div>
+                    <div class="mini-combobox" name="tradeOrderReceiver.identityCardType" id="identityCardType"  valueField="id" textField="name" ></div>
+                  </div>
+                  <div class="mini-col-6">
+                    <div class="fieldTitle">证件号码</div>
+                    <div class="mini-textbox" name="tradeOrderReceiver.identityCardNo"  valueField="identityCardNo" textField="identityCardNo" vtype="minLength:15,maxLength:18"  requiredErrorText="证件格式不正确"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div>
+              <div  class="subhead fix" class="subhead fix" style="margin-top:5px;">
+                  <span class="level-blue"></span>
+                  <span class="subhead-title">自定义字段</span>
+              </div>
+              <div>
+                <a id="jk-add-condition" class="mini-button" plain="true" tooltip="新增订单">
+                    <i class="fa fa-plus"></i>添加字段
+                </a>
+                <a id="jk-del-condition" class="mini-button" plain="true" tooltip="删除订单">
+                    <i class="fa fa-trash"></i>删除字段
+                </a>
+              </div>
+              <div class="inputPanel" id="user_defined">
+              </div>
+            </div>
+
+
+
+            <div id="goods_info">
+                <div class="subhead fix">
+                    <span class="level-blue"></span>
+                    <span class="subhead-title">货品信息</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    扫描条码:<span class="mini-textbox"></span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>添加货品</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>从Excel导入>></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>引用报价单>></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>合并重复货品</a>
+                </div>
+                <div>
+                    <a id="jk-add-product" class="mini-button" plain="true" tooltip="新增订单">
+                        <i class="fa fa-plus"></i>添加货品
+                    </a>
+                    <a id="jk-del-product" class="mini-button" plain="true" tooltip="删除订单">
+                        <i class="fa fa-trash"></i>删除货品
+                    </a>
+               </div>
+                <div class="inputPanel">
+                    <div id="grid-goods" class="mini-datagrid" style="width:100%;height:500px;" pageSize="20" allowCellEdit="true" allowCellSelect="true" idField="id" showPager="false"
+                       showSummaryRow="true"  allowResize="true" >
+                        <div property="columns">
+                            <div field="tradeGoodsNo" headerAlign="center" align="center">货品编号
+                              <input property="editor" class="mini-buttonedit"  allowInput="true" onbuttonclick='onButtonEdit'/>
+                            </div>
+                            <div  field="tradeGoodsName" headerAlign="center" align="center">货品名称
+                              <input property="editor" class="mini-textbox" allowInput="true" />
+                            </div>
+
+                            <div field="sellCount" headerAlign="center" align="center">数量
+                                  <input property="editor" class="mini-spinner" allowInput="true"/>
+                            </div>
+                            <div field="sellPrice" headerAlign="center" align="center">单价
+                              <input property="editor" class="mini-textbox" allowInput="true"  />
+                            </div>
+                            <div   field="promotion" headerAlign="center" align="center">优惠
+                              <input property="editor" class="mini-textbox" allowInput="true"  />
+                            </div>
+                            <div  field="sellTotal" headerAlign="center" align="center">金额
+                            </div>
+                            <div  field="tradeGoodsUnit" headerAlign="center" align="center">单位
+                              <input property="editor" class="mini-textbox" allowInput="true"/>
+                            </div>
+                            <div  field="tradeGoodsSpec" headerAlign="center" align="center">规格
+                              <input property="editor" class="mini-textbox" allowInput="true"/>
+                            </div>
+                            <div field="gift" headerAlign="center" align="center">赠品
+                              <input property="editor" class="mini-textbox" allowInput="true"  />
+                            </div>
+                            <div  field="integral" headerAlign="center" align="center">抵扣积分
+                              <input property="editor" class="mini-textbox" allowInput="true"/>
+                            </div>
+                            <div  field="isFit" headerAlign="center" align="center">组合装
+                              <input property="editor" class="mini-textbox" textField='0' allowInput="true"  />
+                            </div>
+                            <div field="goodsMemo" headerAlign="center" align="center">备注
+                              <input property="editor" class="mini-textbox" allowInput="true"  />
+                            </div>
+                            <div  field="can_buy_num" headerAlign="center" align="center">可订购量
+                              <input property="editor" class="mini-textbox" allowInput="true"  />
+                            </div>
+                            <div  field="min_price" headerAlign="center" align="center">最低售价
+                              <input property="editor" class="mini-textbox" allowInput="true"  />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            <div id="balance_info">
+              <div  class="subhead fix" class="subhead fix" style="margin-top:5px;">
+                  <span class="level-blue"></span>
+                  <span class="subhead-title">订单金额</span>
+              </div>
+              <div class="inputPanel">
+                    <div class="mini-col-6">
+                      <div class="fieldTitle">贷款合计</div>
+                      <div class="mini-textbox" name="tradeOrder.totalFee" id="totalFee"   valueField="totalFee" allowInput="false"></div>
+                    </div>
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">应收邮资</div>
+                        <div class="mini-textbox" name="tradeOrder.receivedPostFee" id="receivedPostFee" valueField="receivedPostFee"></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">客付税额</div>
+                        <div class="mini-textbox" name="tradeOrder.taxFee" id="taxFee" valueField="taxFee"></div>
+                      </div>
+                    </div>
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">实际结算</div>
+                        <div class="mini-textbox" name="tradeOrder.receivedTotal" id="receivedTotal"   valueField="totalFee" ></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">订单优惠</div>
+                        <div class="mini-textbox" name="tradeOrder.discountFee"  id="discountFee" valueField="discountFee"></div>
+                      </div>
+                    </div>
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">抵扣金额</div>
+                        <span class="mini-textbox" name="" id="" allowInput="false" width="300px"></span>
+                        <span><a style="color:#0097FE;">消费券>></a></span>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">合计应收</div>
+                        <div class="mini-textbox" name="totalMoney" id="totalMoney" allowInput="false"></div>
+                      </div>
+                    </div>
+                    <div  class="mini-col-12">
+                            <div class="mini-col-6">
+                              <div class="fieldTitle">支付方式</div>
+                              <div class="mini-combobox" name="tradeOrder.payType"  id="payType" textField="name" valueField="id"></div>
+                            </div>
+                            <div class="mini-col-6">
+                              <div class="fieldTitle">其他费用</div>
+                              <div class="mini-textbox" name="tradeOrder.otherFee"  id="otherFee"  textField="name" valueField="id"></div>
+                            </div>
+                    </div>
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">结算方式</div>
+                        <div class="mini-combobox" name="tradeOrder.chargeType"  id="chargeType" required="true" textField="name" valueField="id" requiredErrorText="结算方式不能为空"></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">结算币种</div>
+                        <div class="mini-combobox"  id="chargeCurrency" name="tradeOrder.chargeCurrency" textField="name" valueField="id"></div>
+                      </div>
+
+                    </div>
+
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">收款账号</div>
+                        <div class="mini-lookup" name="tradeOrder.chargeAccount" id="chargeAccount" allowInput="true" required="true" textField="customerName" valueField="customerId" requiredErrorText="收款账号不能为空" popupWidth="auto"
+                          popup="#gridPanel" grid="#usergird" value='123456789'></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">开票方式</div>
+                        <div class="mini-combobox" name="tradeOrderIsnvoice.invoiceKind" id="invoiceKind" textField="name" valueFied="id"></div>
+                      </div>
+                    </div>
+
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">发票抬头</div>
+                        <div class="mini-textbox" name="tradeOrderInvoice.payerName" id="payerName"></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">支付单号</div>
+                        <div class="mini-textbox" name="tradeOrder.payNo" id="payNo" textField="payNo" valueField="payNo"></div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+
+            <div id="express_info">
+                <div  class="subhead fix" class="subhead fix" style="margin-top:5px;">
+                    <span class="level-blue"></span>
+                    <span class="subhead-title">物流</span>
+                </div>
+                <div class="inputPanel">
+                  <div  class="mini-col-12">
+                    <div class="mini-col-6">
+
+                      <div class="fieldTitle">发货仓库</div>
+                      <div class="mini-combobox" id="warehouse" allowInput="true" textField="warehouseName" valueField="warehouseId" name="tradeOrder.warehouseId"></div>
+                    </div>
+                    <div class="mini-col-6">
+                      <div class="fieldTitle">物流类型</div>
+                      <div class="mini-combobox"  id="logisticType" textField="name" valueField="id"></div>
+                    </div>
+                  </div>
+
+                  <div  class="mini-col-12">
+                    <div class="mini-col-6">
+                      <div class="fieldTitle">物流方式</div>
+                      <div class="mini-combobox" name="tradeOrder.logisticId" id="logisticId" textField="logisticName" valueFied="id"></div>
+                    </div>
+                    </div>
+                  </div>
+
+            </div>
+
+            <div id="other">
+                  <div  class="subhead fix" class="subhead fix" style="margin-top:5px;">
+                      <span class="level-blue"></span>
+                      <span class="subhead-title">其他</span>
+                  </div>
+                <div class="inputPanel">
+                    <div  class="mini-col-12">
+                      <div class="mini-col-12">
+                        <div class="fieldTitle">标记:</div>
+                        <div class="mini-combobox" name="" id="" textField="" valueField=""></div>
+                      </div>
+                    </div>
+
+                    <div  class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">自定义1</div>
+                        <div class="mini-textbox" name="" id="" textField="" valueField="" ></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">自定义2</div>
+                        <div class="mini-textbox" name="" id="" textField="" valueField="" ></div>
+                      </div>
+                    </div>
+
+                    <div class="mini-col-12">
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">自定义3</div>
+                        <div class="mini-textbox" name="" id="" textField="" valueField="" ></div>
+                      </div>
+                      <div class="mini-col-6">
+                        <div class="fieldTitle">自定义4</div>
+                        <div class="mini-textbox" name="" id="" textField="" valueField="" ></div>
+                      </div>
+                    </div>
+                    <div class="mini-col-12">
+                      <div class="mini-col-12">
+                          <span class="mini-button" id="fileUpload" style="margin-top:10px">文件上传</span>
+                            <div id="multiupload1" style='display:none'>
+                              路径：<div class="mini-textbox" id="filePath"></div>
+                              <div  class="uc-multiupload" style="width: 100%; height: 300px" flashurl="/oms/swfupload/swfupload.swf" uploadurl="/jkyun/oms/upload" _autoUpload="true" _limittype="*.txt;*jpg" onuploaderror="onUploadError" onuploadsuccess="onUploadSuccess"></div>
+                           </div>
+                     </div>
+                  </div>
+              </div>
+        </div>
+
+        <div id="gridPanel" class="mini-panel" title="header" iconCls="icon-add" style="width:350px;height:250px;"
+            showToolbar="true" showCloseButton="true" showHeader="false" bodyStyle="padding:0" borderStyle="border:0">
+           <div property="toolbar" style="padding:5px;padding-left:8px;text-align:center;">
+             <div style="float:left;padding-bottom:2px;">
+                 <span>姓名：</span>
+                 <input id="keyText" class="mini-textbox" style="width:160px;"/>
+                 <a class="mini-button" id="searchBtn">查询</a>
+                 <a class="mini-button" id="clearBtn">清除</a>
+             </div>
+             <div style="clear:both;"></div>
+         </div>
+            <div id="usergird" class="mini-datagrid" style="width:100%;height:100%;"
+                borderStyle="border:0" showPageSize="false" showPageIndex="false" url="/oms/data/customer.json">
+               <div property="columns">
+                   <div type="checkcolumn" ></div>
+                   <div field="customerId"  headerAlign="center" allowSort="true">员工帐号</div>
+                   <div field="customerName" headerAlign="center" allowSort="true">姓名</div>
+               </div>
+          </div>
+        </div>
+
+
+
+          </div>
+
+
+
+
+        <div class="jk-portlet-footer jk-fix-footer background-grey">
+              <a id="btn-save" class="mini-button">保存</a>
+              <a id="btn-close" class="mini-button">取消</a>
+        </div>
+
+
+      <script type="text/javascript" src="js/oms_add_order.js"></script>
+</body>
+</html>

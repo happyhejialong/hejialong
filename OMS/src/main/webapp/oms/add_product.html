@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加货品</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+  <div id="productInfo">
+    <table align="center">
+        <tr>
+          <td>货品编号</td>
+          <td><div class="mini-textbox" name="goodsId" width="250px"></div></td>
+          <td>货品名称</td>
+          <td><div class="mini-textbox" name="goodsName" width="250px"></div></td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td>条码</td>
+          <td><div class="mini-textbox" name="barcode" width="250px"></div></td>
+          <td>货品规格</td>
+          <td><div class="mini-combobox" name="specInfo" id="specInfo" textField="name" valueField="id" width="250px"></div></td>
+
+        </tr>
+        <tr></tr>
+        <tr>
+          <td>单价</td>
+          <td><div class="mini-textbox" name="price" id="price" width="250px"></div></td>
+          <td>图片</td>
+          <td></td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td>货品重量</td>
+          <td><div class="mini-textbox" name="weight" id="weight" width="250px"></div></td>
+        </tr>
+        <tr></tr>
+    </table>
+    <br/>
+  </div>
+  <hr/>
+    <div align="center">
+        <a class="mini-button" id="okBtn" width="100px">确认</a>
+        <a class="mini-button" id="cancelBtn" width="100px">取消</a>
+    </div>
+    <script src="/oms/js/add_product.js"></script>
+</body>
+</html>

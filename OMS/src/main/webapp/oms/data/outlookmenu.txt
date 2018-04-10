@@ -1,0 +1,30 @@
+[
+	{ id: "order", text: "订单管理", iconCls: "icon-node" },
+	{ id: "addOrder", pid: "order", text: "新增订单", iconCls: "icon-add", url: "/oms/add_order.html" },
+	{ id: "verifyOrder", pid: "order", text: "订单审核", iconCls: "icon-edit", url: "/oms/verify_order.html" },
+	{ id: "orderList", pid: "order", text: "订单列表", iconCls: "icon-edit", url: "/oms/order_list.html" },
+	{ id: "confirmOrder", pid: "order", text: "发货确认", iconCls: "icon-find", url: "/oms/confirm_delivery.html" },
+
+	{ id: "product", text: "货品管理", iconCls: "icon-node" },
+  { id: "addProduct", pid: "product", text: "新增货品", iconCls: "icon-add", url: "/oms/add_product.html" },
+  { id: "productlist", pid: "product", text: "货品列表", iconCls: "icon-goto", url: "/oms/product_list.html" },
+
+ { id: "customer", text: "客户管理", iconCls: "icon-user" },
+ { id: "addCustomer", pid: "customer", text: "新增客户", iconCls: "icon-add", url: "/oms/add_customer.html" },
+ { id: "customerList", pid: "customer", text: "客户档案", iconCls: "icon-goto", url: "/oms/customer_list.html" },
+ { id: "removeUser", pid: "customer", text: "客户营销", iconCls: "icon-edit", url: "/oms/customer_marketing.html" },
+
+ { id: "shop", text: "店铺管理", iconCls: "icon-node" },
+ { id: "addShop", pid: "shop", text: "新增店铺", iconCls: "icon-add", url: "/oms/add_shop.html" },
+ { id: "shoplist", pid: "shop", text: "店铺列表", iconCls: "icon-goto", url: "/oms/shop_list.html" },
+
+
+ { id: "logistics", text: "物流管理", iconCls: "icon-node" },
+ { id: "queryLogistics", pid: "logistics", text: "物流查询", iconCls: "icon-find", url: "/oms/logistics_query.html" },
+ { id: "postFeeQuery", pid: "logistics", text: "邮资查询", iconCls: "icon-find", url: "/oms/order_list.html" },
+ { id: "logisticsQuery", pid: "logistics", text: "物流推荐", iconCls: "icon-find", url: "/oms/intel_logistic.html" },
+
+
+ { id: "count", text: "统计", iconCls: "icon-node" },
+  { id: "orderCount", pid: "count", text: "销售统计", iconCls: "icon-find", url:"/oms/order_count.html" }
+]

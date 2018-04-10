@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新建客户</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+	<div class="inputPanel" id="customerInfo">
+		<h1>新建客户</h1>
+		<br/>
+		<div class="inputBody" >
+		  <div class="mini-col-12">
+		      <div class="mini-col-6">
+                     <div class="fieldTitle">客户类型:</div>
+                     <div class="mini-combobox" name="customerType" id="customerType" textField="name" valueField="id"  allowInput="true" url="/oms/json/customerType.json"></div>
+              </div>
+               <div class="mini-col-6">
+                     <div class="fieldTitle">客户等级:</div>
+                     <div class="mini-combobox" name="customerLevel" id="customerLevel" textField="name" valueField="id"   allowInput="true" url="/oms/json/customerLevel.json"></div>
+              </div>
+		  </div>
+		  
+		   <div class="mini-col-12">
+              <div class="mini-col-6">
+                     <div class="fieldTitle">网名:</div>
+                     <div class="mini-textbox" name="customerNick" id="customerNick"    allowInput="true"></div>
+              </div>
+               <div class="mini-col-6">
+                     <div class="fieldTitle">姓名:</div>
+                     <div class="mini-textbox" name="customerName" ></div>
+              </div>
+          </div>
+          
+           <div class="mini-col-12">
+              <div class="mini-col-6">
+                     <div class="fieldTitle">手机:</div>
+                    <div class="mini-textbox" name="phone" ></div>
+              </div>
+               <div class="mini-col-6">
+                     <div class="fieldTitle">QQ:</div>
+                    <div class="mini-textbox" name="qq" ></div>
+              </div>
+          </div>
+          
+           <div class="mini-col-12">
+              <div class="mini-col-6">
+                     <div class="fieldTitle">性别:</div>
+                    <div class="mini-combobox" name="gender" id="gender"  allowInput="true" textField="name" valueField="id"    url="/oms/json/customerGender.json"></div>
+              </div>
+               <div class="mini-col-6">
+                     <div class="fieldTitle">邮编:</div>
+                    <div class="mini-textbox" name="zip" id="zip"  allowInput="true"></div>
+              </div>
+          </div>
+          
+          <div class="mini-col-12">
+              <div class="mini-col-6">
+                     <div class="fieldTitle">email:</div>
+                    <div class="mini-textbox" name="email" id="email" ></div>
+              </div>
+               <div class="mini-col-6">
+                     <div class="fieldTitle">邮编:</div>
+                    <div class="mini-textbox" name="zip" id="zip"  allowInput="true"></div>
+              </div>
+          </div>
+          
+           <div class="mini-col-12">
+              <div class="mini-col-6">
+                     <div class="fieldTitle">出生日期:</div>
+                    <div class="mini-datepicker" name="birthday" id="birthday"  allowInput="true" format="yyyy-MM-dd HH:mm:ss" showTime="true" timeFormat="HH:mm:ss"></div>
+              </div>
+               <div class="mini-col-6">
+                     <div class="fieldTitle">年龄:</div>
+                    <div class="mini-textbox" name="age" id="age" ></div>
+              </div>
+          </div>
+           <div class="mini-col-12">
+           <div class="mini-col-12">
+                <div class="fieldTitle">地址:</div>
+                <div>
+                <span class="mini-combobox" name="state" id="state" width="180px" allowInput="true" textField="name" valueField="name"></span>
+                <span class="mini-combobox" name="city" id="city" width="180px" allowInput="true" textField="name" valueField="name"></span>
+                <span class="mini-combobox" name="district" id="district" width="180px" allowInput="true" textField="name" valueField="name"></span>
+                <span class="mini-textbox" name="address" id="address" width="250px" allowInput="true"></span>
+                </div>
+              </div>
+             </div>
+	</div>
+</div>
+	 <div class="jk-portlet-footer jk-fix-footer background-grey">
+              <a id="btn-save" class="mini-button">保存</a>
+              <a id="btn-close" class="mini-button">取消</a>
+ 	</div>
+	<script src="/oms/js/add_customer.js"></script>
+</body>
+</html>

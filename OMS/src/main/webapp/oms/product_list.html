@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>货品列表</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+  <h1>货品档案</h1>
+  <br/>
+  <div>
+      <a class="mini-button" id="add_product_btn">添加货品</a>
+      <a class="mini-button" id="del_product_btn">删除货品</a>
+  </div>
+  <div class="mini-datagrid" id="goodsGrid" style="width:100%;height:100%;"  idField="id"
+        allowResize="true" pageSize="20"
+        allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+        editNextOnEnterKey="true"  editNextRowCell="true">
+        <div property="columns">
+          <div type="checkcolumn"></div>
+          <div type="indexcolumn">序列号</div>
+        	<div name="image" field="image" headerAlign="center" width="" align="center">图片
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+        	<div name="goodsId" field="goodsId" headerAlign="center" width="" align="center">商品编号
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+        	<div name="goodsName" field="goodsName" headerAlign="center" width="" align="center">商品名称
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+					<div name="specInfo" field="specName" headerAlign="center" width="" align="center">商品规格
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+          <div name="weight" field="weight" headerAlign="center" width="" align="center">商品重量
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+        	<div name="price" field="price" headerAlign="center" width="" align="center">价格
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+        	<div name="barcode" field="barcode" headerAlign="center" width="" align="center">条码
+        		<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+        	</div>
+          <div field="id" visible="false" name="id"></div>
+        </div>
+  </div>
+  <script src="/oms/js/product_list.js"></script>
+</body>
+</html>

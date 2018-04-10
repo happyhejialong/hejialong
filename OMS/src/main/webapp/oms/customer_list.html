@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+<h1>客户档案</h1>
+<br/>
+<div class="mini-datagrid" id="customersGrid" style="width:100%;height:100%;"  idField="id"
+        allowResize="true" pageSize="20"
+        allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+        editNextOnEnterKey="true"  editNextRowCell="true">
+        <div property="columns">
+        	<div type="indexcolumn">序列号</div>
+          <div name="id" field="id" visible="false"></div>
+        	<div name="customerNick" field="customerNick" headerAlign="center" width="" align="center">网名
+        	</div>
+        	<div name="customerName" field="customerName" headerAlign="center" width="" align="center">姓名
+        	</div>
+        	<div name="phone" field="phone" headerAlign="center" width="" align="center">手机
+        	</div>
+        	<div name="zip" field="zip" headerAlign="center" width="" align="center">邮编
+        	</div>
+        	<div name="email" field="email" headerAlign="center" width="" align="center">邮箱
+        	</div>
+      	   <div name="qq" field="qq" headerAlign="center" width="" align="center">qq
+        	</div>
+        	<div name="gender" field="gender" headerAlign="center" width="" align="center"   renderer='onGridOneRowRender'>性别
+        	</div>
+        	<div name="birthday" field="birthday" headerAlign="center" width="" align="center">生日
+        	</div>
+          <div name="age" field="age" headerAlign="center" width="" align="center">年龄
+        	</div>
+        </div>
+	</div>
+  <script src="/oms/js/customer_list.js"></script>
+</body>
+</html>

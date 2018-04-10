@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="/js/boot.js"></script>
+<title>注册页面</title>
+</head>
+<body>
+<div class="inputPanel">
+	<h1 align="center">用户注册</h1>
+	<br/>
+<table border="0" cellpadding="1" cellspacing="2" align="center" id="userInfo">
+    <tr>
+        <td style="width:60px;">姓名：</td>
+        <td style="width:100px">
+            <input name="username" id="username" class="mini-textbox" />
+        </td>
+    </tr>
+    <tr>
+        <td >密码：</td>
+        <td >
+            <input name="password" id="password" class="mini-password" />
+        </td>
+    </tr>
+    <tr>
+        <td >手机号：</td>
+        <td >
+            <input name="phone" id="phone" class="mini-textbox" />
+        </td>
+    </tr>
+    <tr>
+        <td >邮箱：</td>
+        <td >
+            <input name="email" class="mini-textbox" />
+        </td>
+    </tr>
+    <tr>
+        <td>所属分组：</td>
+        <td>
+            <input name="authGroup" id="authGroup" class="mini-combobox" />
+        </td>
+    </tr>
+    <tr>
+    	<td>短信验证码</td>
+    	<td>
+    		<input class="mini-textbox" name="validate" width="230px"/>
+    		<a class="mini-button" name="sendMsg" id="sendMsg" ><font color="blue">获取短信验证码</font></a>
+    	</td>
+    </tr>
+</table>
+</div>
+ <div class="jk-portlet-footer jk-fix-footer background-grey">
+              <a id="btn-save" class="mini-button">保存</a>
+              <a id="btn-close" class="mini-button">取消</a>
+ </div>
+ <script src="/oms/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加店铺</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+  <div id="shopInfo">
+    <table align="center">
+        <tr>
+          <td colspan="2"><a href="https://oauth.tbsandbox.com/authorize?client_id=test&response_type=token&redirect_uri=http://www.tbsandbox.com" target='_blank'><font color="blue">获取授权码请点击</font></a></td>
+        </tr>
+        <tr>
+          <td>店铺名称</td>
+          <td><div class="mini-textbox" name="shopName" id="goodsId" width="250px"></div></td>
+          <td>授权码</td>
+          <td><div class="mini-textbox" name="authCode" id="authCode" width="250px"></div></td>
+        </tr>
+        <tr></tr>
+    </table>
+    <br/>
+  </div>
+  <hr/>
+    <div align="center">
+        <a class="mini-button" id="okBtn" width="100px">确认</a>
+        <a class="mini-button" id="cancelBtn" width="100px">取消</a>
+    </div>
+    <script src="/oms/js/add_shop.js"></script>
+</body>
+</html>

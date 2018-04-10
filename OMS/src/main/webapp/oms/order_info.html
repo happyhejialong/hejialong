@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>订单详情</title>
+<script src="/js/boot.js"></script>
+</head>
+<body>
+	<div id="orderInfo" align="center">
+		<h1>订单详情</h1>
+		<br/>
+	<table>
+		<tr><td colspan="4"><h3>基本信息</h3></td></tr>
+		<tr>
+			<td>店铺名称:</td>
+			<td><div class="mini-combobox" name="shopInfo" id="shopInfo" textField="name" valueField="id" width="200px" allowInput="true"></div></td>
+			<td>订单类型:</td>
+			<td><div class="mini-combobox" name="tradeOrder.tradeType" id="tradeType" textField="name" valueField="id" width="200px"  allowInput="true"></td>
+			<td>业务员:</td>
+			<td><div class="mini-combobox" name="tradeOrder.seller" id="seller" textField="name" valueField="id" width="200px"  allowInput="true"></div></td>
+			<td>原始单号:</td>
+			<td><div class="mini-textbox" name="tradeOrder.sourceTradeId" width="250px"></div></td>
+		</tr>
+		<tr>
+			<td>买家留言:</td>
+			<td><div class="mini-textbox" name="tradeOrder.buyerMemo" width="200px"></div></td>
+			<td>卖家留言:</td>
+			<td><div class="mini-textbox" name="tradeOrder.sellerMemo" width="200px"></div></td>
+		</tr>
+		<tr><td colspan="4"><h3>客户信息</h3></td></tr>
+		<tr>
+			<td>网名:</td>
+			<td><div class="mini-buttonedit" name="tradeCustomer.customerNick" id="customerNick" width="200px" allowInput="true"></div></td>
+			<td>email:</td>
+			<td><div class="mini-textbox" name="tradeCustomer.email" id="email" width="200px"></div></td>
+			<td>客户类型:</td>
+			<td><div class="mini-combobox" name="tradeCustomer.customerType" id="customerType" width="200px" allowInput="true"></div></td>
+			<td>手机号码:</td>
+			<td><div class="mini-textbox" name="tradeCustomer.phone" id="phone" width="250px"></div></td>
+		</tr>
+		<tr><td colspan="4"><h3>收货人信息</h3></td></tr>
+		<tr>
+			<td>姓名:</td>
+			<td><div class="mini-textbox" name="tradeReceiver.receiverName" id="receiverName" width="200px"></div></td>
+			<td>电话:</td>
+			<td><div class="mini-textbox" name="tradeReceiver.receiverPhone" id="receiverPhone" width="200px"></div></td>
+			<td>证件类型:</td>
+			<td><div class="mini-combobox" name="tradeReceiver.identityCardType" id="identityCardType" width="200px" allowInput="true"></div></td>
+			<td>证件号:</td>
+			<td><div class="mini-textbox" name="tradeReceiver.identityCardNo" id="identityCardNo" width="250px"></div></td>
+		</tr>
+		<tr>
+			<td>省份:</td>
+			<td><div class="mini-combobox" name="tradeReceiver.state" id="state" width="200px" allowInput="true" textField="name" valueField="name"></div></td>
+			<td>市:</td>
+			<td><div class="mini-combobox" name="tradeReceiver.city" id="city" width="200px" allowInput="true" textField="name" valueField="name"></div></td>
+			<td>区:</td>
+			<td><div class="mini-combobox" name="tradeReceiver.district" id="district" width="200px" allowInput="true" textField="name" valueField="name"></div></td>
+			<td>详细地址</td>
+			<td><div class="mini-textbox" name="tradeReceiver.address" id="address" width="250px" allowInput="true"></div></td>
+		</tr>
+		<tr>
+				<td><a class="mini-button" id="addProdBtn">添加货品</a></td>
+				<td><a class="mini-button" id="delProdBtn">删除货品</a></td>
+		</tr>
+	</table>
+	<div>
+	<div class="mini-datagrid" id="goodsGrid" style="width:1100px;height:300px;"  idField="id"
+        allowResize="true" pageSize="20"
+        allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+        editNextOnEnterKey="true"  editNextRowCell="true">
+        <div property="columns">
+					<div type="indexcolumn">序列号</div>
+					<div name="image" field="image" headerAlign="center" width="" align="center">图片
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="goodsId" field="goodsId" headerAlign="center" width="" align="center">商品编号
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="goodsName" field="goodsName" headerAlign="center" width="" align="center">商品名称
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="price" field="price" headerAlign="center" width="" align="center">价格
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="discount" field="discount" headerAlign="center" width="" align="center">折扣
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="sellCount" field="sellCount" headerAlign="center" width="" align="center">购买数量
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="sellPrice" field="sellPrice" headerAlign="center" width="" align="center">总价格
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+					<div name="barcode" field="barcode" headerAlign="center" width="" align="center">条码
+						<input property="editor" class="mini-textbox" style="width:100%;" minWidth="200" />
+					</div>
+        </div>
+	</div>
+</div>
+	<table>
+		<tr>
+			<td colspan="4"><h3>订单结算</h3></td>
+		</tr>
+		<tr>
+			<td>货品总额:</td>
+			<td><div class="mini-textbox" name="goodsTotalMoney" id="goodsTotalMoney" width="200px"></div></td>
+			<td>税额:</td>
+			<td><div class="mini-textbox" name="tradeOrder.taxFee" id="taxFee" width="200px"></div></td>
+			<td>物流方式:</td>
+			<td><div class="mini-combobox" name="tradeOrder.logisticsId" id="goodsTotalMoney" textField="name" valueField="id"  width="200px" allowInput="true"></div></td>
+			<td>应收邮资:</td>
+			<td><div class="mini-textbox" name="tradeOrder.postFee" id="postFee"  width="250px"></div></td>
+		</tr>
+		<tr>
+			<td>其他费用</td>
+			<td><div class="mini-textbox" name="otherFee" id="otherFee"  width="200px"></div></td>
+			<td>合计应收</td>
+			<td><div class="mini-textbox" name="tradeOrder.totalMoney" id="totalMoney"  width="200px"></div></td>
+		</tr>
+	</table>
+</div>
+	 <div class="jk-portlet-footer jk-fix-footer background-grey">
+              <a id="btn-save" class="mini-button">保存</a>
+              <a id="btn-close" class="mini-button">取消</a>
+ 	</div>
+	<script src="/oms/js/order_info.js"></script>
+</body>
+</html>

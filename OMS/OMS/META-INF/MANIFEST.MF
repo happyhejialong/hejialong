@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: OMS Maven Webapp
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.wdgj
+Built-By: TF
+Build-Jdk: 1.7.0_79
+Created-By: Apache Maven 3.3.3
+Implementation-URL: http://maven.apache.org
+Archiver-Version: Plexus Archiver
+
